@@ -14,7 +14,7 @@ IMDBAPI = {
 }
 urlBaseIMDB = ''
 VersionScrap = '1.0 By UserGhost411'
-DocumentationUrl = 'https://github.com/UserGhost411/repo'
+DocumentationUrl = 'https://github.com/UserGhost411/FilmMikirAPI'
 errorMessage = {"status":0,"msg":"cant find spesific endpoint,Please Check our documentation","documentation":DocumentationUrl}
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
