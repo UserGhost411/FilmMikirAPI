@@ -18,6 +18,7 @@ This repo is a rest-api which is scraping to the [Kincir](https://kincir.com) we
 | /rating/`<page>`  | Integer | ^ same but with Pagination | 
 | /search/`<article\|rating>`/`<keyword>`  | String,String | Search Specific Article or Rating | 
 | /search/`<article\|rating>`/`<keyword>`/`<page>`| String,String,Number | ^ same but with Pagination | 
+
 #note: The Article `id` contained in the search result can be used for `/review/read/<id>` and `/news/read/<id>` endpoints
 
 ## API Usage
