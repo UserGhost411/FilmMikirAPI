@@ -8,15 +8,30 @@ This repo is a rest-api which is scraping to the [Kincir](https://kincir.com) we
 | Url Usage | Params Type | Endpoint |
 | ------------- |:-------------:| :-----:| 
 | / | - | Default Endpoint | 
-| /reviews  | - | Get movie reviews from kincir | 
-| /reviews/`<page>`  | Integer | ^ same but with Pagination | 
-| /ratings  | - | Get movie ratings from ImDb | 
-| /ratings/`<page>`  | Integer | ^ same but with Pagination | 
-| /search/`<review\|rating>`/`<keyword>`  | String,String | Search Specific Review or Rating | 
-|  /search/`<review\|rating>`/`<keyword>`/`<page>`| String,String,Number | ^ same but with Pagination | 
+| /news  | - | Get News Article from kincir | 
+| /news/`<page>`  | Integer | ^ same but with Pagination | 
+| /news/read/`<id>`  | String | Get Article from some news | 
+| /review  | - | Get movie reviews from kincir | 
+| /review/`<page>`  | Integer | ^ same but with Pagination | 
+| /review/read/`<id>`  | String | ^ Get Article from some review | 
+| /rating  | - | Get movie ratings from ImDb | 
+| /rating/`<page>`  | Integer | ^ same but with Pagination | 
+| /search/`<article\|rating>`/`<keyword>`  | String,String | Search Specific Article or Rating | 
+| /search/`<article\|rating>`/`<keyword>`/`<page>`| String,String,Number | ^ same but with Pagination | 
+#note: The Article `id` contained in the search result can be used for `/review/read/<id>` and `/news/read/<id>` endpoints
 
-## Usage
+## API Usage
+**BaseURL:**
+```url
+https://filmmikirapi.herokuapp.com/
+```
+**Example:**
+* https://filmmikirapi.herokuapp.com/news/2/
+* https://filmmikirapi.herokuapp.com/news/read/zWQ4BWRgjo0Or
+* https://filmmikirapi.herokuapp.com/search/article/marvel/2/
+* https://filmmikirapi.herokuapp.com/article/monster%20hunter/
 
+## Development
 * (For Windows) set the flask app
 ```bash
 set FLASK_APP=app.py
