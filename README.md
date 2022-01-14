@@ -27,10 +27,10 @@ This repo is a rest-api which is scraping to the [Kincir](https://kincir.com) we
 https://filmmikirapi.herokuapp.com/
 ```
 **Example:**
-* https://filmmikirapi.herokuapp.com/news/2/
+* https://filmmikirapi.herokuapp.com/news/2
 * https://filmmikirapi.herokuapp.com/news/read/zWQ4BWRgjo0Or
-* https://filmmikirapi.herokuapp.com/search/article/marvel/2/
-* https://filmmikirapi.herokuapp.com/article/monster%20hunter/
+* https://filmmikirapi.herokuapp.com/search/article/marvel/2
+* https://filmmikirapi.herokuapp.com/search/article/monster%20hunter
 
 ## Development
 * (For Windows) set the flask app
