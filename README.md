@@ -1,7 +1,6 @@
 # FilmMikirAPI 
 
-This repo is a rest-api which is scraping to the [Kincir](https://kincir.com) website and made up using Flask.
-
+This repo is a simple rest-api which is used for scrapping on the [Kincir](https://kincir.com) website using the Python and Flask package
 
 ## Endpoint
 
