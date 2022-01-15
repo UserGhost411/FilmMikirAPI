@@ -44,7 +44,6 @@ python -m flask run
 Then open [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## Package Used
-This Project use some packages witch 
 This project uses several packages contained in [requirements](requirements.txt), which can be installed using the PIP command:
 
 ```bash
