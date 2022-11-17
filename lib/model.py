@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-from lib.static import KincirAPI,IMDBAPI,errorMessage,headers,VersionScrap,DocumentationUrl
+from lib.static import KincirAPI,IMDBAPI,errorMessage,headers,VersionScrap,DocumentationUrl,showError
 import requests
 from flask import request as req
 import urllib.parse
