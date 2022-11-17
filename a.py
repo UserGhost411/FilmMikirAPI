@@ -11,7 +11,7 @@ KincirAPI = {
 }
 IMDBAPI = {
     'url': 'https://imdb-api.com/',
-    'key':str(env['b'][random.randint(0, len(env['b']))])
+    'key':str(env['b'][random.randint(0, len(env['b'])-1)])
 }
 urlBaseIMDB = ''
 VersionScrap = '1.1 By UserGhost411'

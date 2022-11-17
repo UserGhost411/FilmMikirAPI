@@ -1,7 +1,7 @@
-beautifulsoup4==4.9.1
-Flask==1.1.2
-gunicorn==20.0.4
-requests==2.23.0
-Jinja2==2.11.2
-soupsieve==2.0.1
-urllib3==1.25.9
+beautifulsoup4==4.11.1
+Flask==2.2.2
+gunicorn==20.1.0
+requests==2.28.1
+Jinja2==3.1.2
+soupsieve==2.3.2
+urllib3==1.26.12
