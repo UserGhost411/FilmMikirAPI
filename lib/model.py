@@ -25,7 +25,7 @@ def getReviews(page):
                 'type':item['type'], 
             })
     else:
-        return errorMessage    
+        return showError("Internal Error - Server Response Code : "+str(ret.status_code))    
     jsondata['status']=1
     jsondata['data']=datas
     jsondata['version']=VersionScrap
@@ -53,7 +53,7 @@ def getNews(page):
         jsondata.pop('message',None)
         return jsondata
     else:
-        return errorMessage    
+        return showError("Internal Error - Server Response Code : "+str(ret.status_code)) 
 def getReview(id):
     newUrl = KincirAPI['url'] + 'movie/cinema/a-' +str(id)
     ret = requests.get(newUrl , headers={'User-Agent':headers['User-Agent']})
@@ -77,7 +77,7 @@ def getReview(id):
             'status':'1'
         }
     else:
-        return errorMessage
+        return showError("Internal Error - Server Response Code : "+str(ret.status_code)) 
 def getRatings(page):
     newUrl = IMDBAPI['url'] + 'en/API/MostPopularMovies/' + IMDBAPI['key']
     ret = requests.get(newUrl , headers=headers)
@@ -111,7 +111,7 @@ def getSearch(a,keyword,page):
                 })
             jsondata['data']=datas
         else:
-            return errorMessage    
+            return showError("Internal Error - Server Response Code : "+str(ret.status_code)) 
     elif(a=="rating"):
         newUrl = IMDBAPI['url'] + 'en/API/SearchMovie/'+ IMDBAPI['key']+"/"+keyword
         ret = requests.get(newUrl , headers={'User-Agent':headers['User-Agent']})
@@ -138,9 +138,9 @@ def getSearch(a,keyword,page):
                 jsondata.pop('expression',None)
                 jsondata['data']=datas
         else:
-            return errorMessage    
+            return showError("Internal Error - Server Response Code : "+str(ret.status_code)) 
     else:
-        return errorMessage
+        return showError("Client Error Endpoint - Please Recheck your endpoint") 
     jsondata['status']=1
     jsondata['version']=VersionScrap
     return jsondata 

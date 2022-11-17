@@ -21,3 +21,5 @@ errorMessage = {"status":0,"msg":"cant find spesific endpoint,Please Check our d
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
 }
+def showError(msg):
+    return {"status":0,"msg":msg,"documentation":DocumentationUrl}
