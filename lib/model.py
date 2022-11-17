@@ -8,7 +8,7 @@ import time
 def getRootData():
         return {'documentation': DocumentationUrl,'version': VersionScrap,'status':'1'}
 def getReviews(page):
-    newUrl = KincirAPI['url'] + 'api/v1/posts/postByTypeAndPostsgroup/movie-reviews?limit=30&page='+str(page)
+    newUrl = KincirAPI['api'] + 'api/v1/posts/postByTypeAndPostsgroup/movie-reviews?limit=30&page='+str(page)
     ret = requests.get(newUrl , headers={'User-Agent':headers['User-Agent'],'Authorization':getKincirAuth()})
     if ret.status_code == 200:
         jsondata = ret.json()
@@ -31,7 +31,7 @@ def getReviews(page):
     jsondata['version']=VersionScrap
     return jsondata
 def getNews(page):
-    newUrl = KincirAPI['url'] + 'api/v1/posts/postByCategory/cinema?limit=30&page='+str(page)
+    newUrl = KincirAPI['api'] + 'api/v1/posts/postByCategory/cinema?limit=30&page='+str(page)
     ret = requests.get(newUrl , headers={'User-Agent':headers['User-Agent'],'Authorization':getKincirAuth()})
     if ret.status_code == 200:
         jsondata = ret.json()
@@ -63,7 +63,7 @@ def getReview(id):
         author = soup.find('span',attrs={'class' : 'author'}).find('a').get_text().strip()
         tgl = soup.find('span',attrs={'class' : 'author'}).get_text().strip().split('/')[1].strip()
         des = soup.find('div',attrs={'class':'content-detail'}).get_text().strip()
-        img = soup.find('div',attrs={'class':'head-img'}).find('img').get('src').split('/production/')[1]
+        img = soup.find('div',attrs={'class':'head-img'}).find('img').get('src').replace("/rs:fill:16:8","")
         return {
             'data' : {
                 'id':str(id),
@@ -71,7 +71,7 @@ def getReview(id):
                 'author':author,
                 'date':tgl,
                 'article':des,
-                'image':'https://cdn.kincir.com/2/production/'+img
+                'image':img
             },
             'version': VersionScrap,
             'status':'1'
@@ -93,7 +93,7 @@ def getRatings(page):
     return jsondata
 def getSearch(a,keyword,page):
     if(a=="article"):
-        newUrl = KincirAPI['url'] + 'api/v1/posts/search'
+        newUrl = KincirAPI['api'] + 'api/v1/posts/search'
         ret = requests.get(newUrl , headers={'User-Agent':headers['User-Agent'],'Authorization':getKincirAuth()} ,params=[('search',keyword), ('limit','30'), ('page',page)])
         if ret.status_code == 200:
             jsondata = ret.json()
@@ -147,7 +147,7 @@ def getSearch(a,keyword,page):
 def getKincirAuth():
     current_time = time.time()
     if(KincirAPI['expired']<current_time):
-        newUrl_ex = KincirAPI['url'] + 'api/v1/auth'
+        newUrl_ex = KincirAPI['api'] + 'api/v1/auth'
         ret_ex = requests.post(newUrl_ex , headers={'User-Agent':headers['User-Agent']},data=KincirAPI['auth'])
         KincirAPI['expired'] = ret_ex.json()['data']['auth']['expiredAt']
         KincirAPI['key'] = 'Bearer '+ret_ex.json()['data']['auth']['accessToken']
