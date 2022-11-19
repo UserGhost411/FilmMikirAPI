@@ -26,7 +26,7 @@ This repo is a simple rest-api which is used for scrapping on the [Kincir](https
 https://film-mikir.vercel.app/
 ```
 **Example:**
-* hhttps://film-mikir.vercel.app/news/2
+* https://film-mikir.vercel.app/news/2
 * https://film-mikir.vercel.app/news/read/zWQ4BWRgjo0Or
 * https://film-mikir.vercel.app/search/article/marvel/2
 * https://film-mikir.vercel.app/search/article/monster%20hunter
