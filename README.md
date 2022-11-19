@@ -23,13 +23,13 @@ This repo is a simple rest-api which is used for scrapping on the [Kincir](https
 ## API Usage
 **BaseURL:**
 ```url
-https://filmmikirapi.herokuapp.com/
+https://film-mikir.vercel.app/
 ```
 **Example:**
-* https://filmmikirapi.herokuapp.com/news/2
-* https://filmmikirapi.herokuapp.com/news/read/zWQ4BWRgjo0Or
-* https://filmmikirapi.herokuapp.com/search/article/marvel/2
-* https://filmmikirapi.herokuapp.com/search/article/monster%20hunter
+* hhttps://film-mikir.vercel.app/news/2
+* https://film-mikir.vercel.app/news/read/zWQ4BWRgjo0Or
+* https://film-mikir.vercel.app/search/article/marvel/2
+* https://film-mikir.vercel.app/search/article/monster%20hunter
 
 ## Development
 * (For Windows) set the flask app
